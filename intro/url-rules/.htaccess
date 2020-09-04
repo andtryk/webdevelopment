@@ -1,0 +1,7 @@
+RewriteEngine On
+
+#Regular expression
+RewriteRule ^NiCe$ signup-view.php [NC]
+
+
+

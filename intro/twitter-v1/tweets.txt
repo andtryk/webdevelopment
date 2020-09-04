@@ -1,0 +1,4 @@
+[
+  ["Title A", "Message A"],
+  ["Title B", "Message B"]
+]
