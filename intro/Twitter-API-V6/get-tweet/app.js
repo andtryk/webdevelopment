@@ -4,7 +4,7 @@ async function tweet() {
 
 	// Get the data from the form
 	// it will make it ready to be passed via AJAX
-	var data = new FormData(document.querySelector("#frmTweet"));
+	var data = new FormData(document.querySelector("#formTweet"));
 	// console.log(data.get('tweetTitle'))
 
 	let bridge = await fetch("api-create-tweet.php", {
