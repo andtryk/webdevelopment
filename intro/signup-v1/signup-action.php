@@ -1,5 +1,5 @@
 <?php
-if( ! $_POST ){  header('Location: index.php'); }
+if( ! $_POST ){  header('Location: signup-view.php'); }
 if( ! filter_var(  $_POST['email'], 
   FILTER_VALIDATE_EMAIL  ) ){ 
     header('Location: signup-view.php');

@@ -26,7 +26,7 @@
         </article>
     </section>
     <section id="frontpage-right-column">
-      <form action="/api/api-login.php" method="POST">
+      <form action="api/api-login.php" method="POST">
         <input name="username" type="text" placeholder="user name">
         <input name="password" type="password" placeholder="password">
         <button>login</button>

@@ -35,7 +35,7 @@
   // $_GET['']
   // $_POST['']
 
-  header('Location: main-page.php');
+  header('Location: admin.php');
 
 
 })();
