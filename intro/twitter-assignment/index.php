@@ -27,9 +27,14 @@
     </section>
     <section id="frontpage-right-column">
       <form action="api/api-login.php" method="POST">
-        <input name="username" type="text" placeholder="user name">
+        <input name="email" type="text" placeholder="email">
         <input name="password" type="password" placeholder="password">
         <button>login</button>
+      </form>
+      <form action="api/api-signup.php" method="POST">
+            <input name="email" type="text" placeholder="email">
+            <input name="password" type="password" placeholder="password">
+            <button>signup</button>
       </form>
     </section>
   </main>

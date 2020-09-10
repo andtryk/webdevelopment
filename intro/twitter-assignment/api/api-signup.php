@@ -2,18 +2,18 @@
 if( ! $_POST ){  header('Location: signup-view.php'); }
 if( ! filter_var(  $_POST['email'], 
   FILTER_VALIDATE_EMAIL  ) ){ 
-    header('Location: signup-view.php');
+    header('Location: ../index.php');
     exit();
 }
 
-$sUsers = file_get_contents('private/users.txt');
+$sUsers = file_get_contents('../private/users.txt');
 $aUsers = json_decode($sUsers);
 
 // Check for duplicated emails
 foreach( $aUsers as $aUser ){
   // $aUser ["5f48e543ec534","b@b.com"]
   if( $_POST['email'] ==  $aUser[1] ){
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
   }
 }
@@ -24,6 +24,7 @@ foreach( $aUsers as $aUser ){
 $aUser = [uniqid(), $_POST['email'], $_POST['password']];
 array_push($aUsers, $aUser);
 // var_dump($aUsers);
-file_put_contents('private/users.txt', json_encode($aUsers)  );
-header('Location: main-page.php');
+file_put_contents('../private/users.txt', json_encode($aUsers)  );
+//print_r($aUser);
+header('Location: ../main-page.html');
 exit();
