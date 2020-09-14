@@ -21,7 +21,9 @@ async function tweet() {
 	console.log(jResponse);
 }
 
-/* async function getTweet() {
+
+
+async function getTweet() {
 	// console.log('x')
 	var inputId = document.querySelector("#inputId").value;
 	// console.log(inputId)
@@ -50,4 +52,4 @@ async function tweet() {
 	</div>
 	`;
 	document.querySelector("#tweets").innerHTML = divTweet;
-} */
+}

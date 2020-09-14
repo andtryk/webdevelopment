@@ -39,7 +39,7 @@ try{
   if( strlen($_POST['tweetMessage']) > 140 ){
     http_response_code(400);
     header('Content-Type: application/json');
-    echo '{"error":"title cannot be longet than 140 characters"}';
+    echo '{"error":"title cannot be longer than 140 characters"}';
     exit();
   }
 
@@ -51,11 +51,11 @@ try{
   $jTweet->id      = $sTweetId;
   $jTweet->title   = $_POST['tweetTitle'];
   $jTweet->message = $_POST['tweetMessage'];
-  $jTweet->user = $_SESSION['email'];
+  $jTweet->userId = $_SESSION['id'];
   // echo json_encode($jTweet);
 
   // open the db
-  $sTweets = file_get_contents('tweets.txt');
+  $sTweets = file_get_contents('../private/tweets.txt');
   // convert the data to an object []
   $aTweets = json_decode($sTweets);
   // write the tweet to the object
@@ -63,7 +63,7 @@ try{
   // convert the object back to text
   $sTweets = json_encode($aTweets);
   // save the text into the file
-  file_put_contents('tweets.txt', $sTweets);
+  file_put_contents('../private/tweets.txt', $sTweets);
 
   header('Content-Type: application/json');
   echo '{ "id":"'.$sTweetId.'"}';

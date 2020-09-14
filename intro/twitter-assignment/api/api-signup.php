@@ -8,16 +8,16 @@ if( ! filter_var(  $_POST['email'],
 }
 
 if( ! isset($_POST['email']) ){
-  echo 'missing email'; 
-  return;   
+  echo 'Missing email';
+  header('Refresh: 2; URL = ../index.php');   
 }
 if( strlen($_POST['email']) < 6  ){
-  echo 'email must be at least 6 characters';
-  return;
+  echo 'Email must be at least 6 characters';
+  header('Refresh: 2; URL = ../index.php');
 }
 if( strlen($_POST['email']) > 200  ){
-  echo 'email max length 200 characters';
-  return;
+  echo 'Email max length 200 characters';
+  header('Refresh: 2; URL = ../index.php');
 }
 
 $sUsers = file_get_contents('../private/users.txt');
