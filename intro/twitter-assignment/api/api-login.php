@@ -19,32 +19,19 @@
   // the user exists
   $sUsers = file_get_contents('../private/users.txt');
   $aUsers = json_decode($sUsers);
-  $sCorrentEmail = 'a@a.com';
-  if(   $_POST['email']  !=  $sCorrentEmail  ){
-    echo 'cannot login';
-    return;
-  }
 
   foreach( $aUsers as $aUser ){
     // $aUser ["5f48e543ec534","b@b.com"]
-    if( $_POST['email'] !=  $aUser[1] ){
+    if( $_POST['email'] ==  $aUser[1] && $_POST['password'] ==  $aUser[2] ){
       header('Location: ../index.php');
-      exit();
-    }
-    if( $_POST['password'] !=  $aUser[2] ){
-      header('Location: ../index.php');
-      exit();
-    }
-  }
+    };
+  };
   // To use sessions you MUST start the session engine
   
-  $_SESSION['name']     = 'A';
-  $_SESSION['lastName'] = 'AA';
-  $_SESSION['number']   = 5;
-  // $_GET['']
-  // $_POST['']
-
-  header('Location: admin.php');
+  $_SESSION['id']     = $aUser[0];
+  $_SESSION['email'] = $aUser[1];
+  $_SESSION['password']   = $aUser[2];
+  header('Location: ../main-page.php');
 
 
 })();

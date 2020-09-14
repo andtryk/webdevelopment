@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+  <?php session_start(); ?>
   <div id="page">
 
     <div id="left">
@@ -56,21 +56,26 @@
 
 
     <div id="middle">
-
+    WELCOME <?=  $_SESSION['email']; ?>
+    <form id="formTweet" onsubmit="tweet(); return false">
+    <input type="text" name="tweetTitle" placeholder=" tweet title">
+    <input type="text" name="tweetMessage" placeholder=" tweet message">
+    <button>tweet</button>
+    </form>
+    <div id="tweets"></div>
     </div>
     <!-- end middle column -->
 
-
     <div id="right">
-
+      <a href="api/api-logout.php"><button>Logout</button></a>
     </div>
     <!-- end right column -->
-
+    
   </div>
 
 
 
-
+<script src="app.js"></script>
 
 </body>
 </html>

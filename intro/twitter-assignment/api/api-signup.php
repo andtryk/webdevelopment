@@ -1,9 +1,23 @@
 <?php
-if( ! $_POST ){  header('Location: signup-view.php'); }
+session_start();
+if( ! $_POST ){  header('Location: ../index.php'); }
 if( ! filter_var(  $_POST['email'], 
   FILTER_VALIDATE_EMAIL  ) ){ 
     header('Location: ../index.php');
     exit();
+}
+
+if( ! isset($_POST['email']) ){
+  echo 'missing email'; 
+  return;   
+}
+if( strlen($_POST['email']) < 6  ){
+  echo 'email must be at least 6 characters';
+  return;
+}
+if( strlen($_POST['email']) > 200  ){
+  echo 'email max length 200 characters';
+  return;
 }
 
 $sUsers = file_get_contents('../private/users.txt');
@@ -26,5 +40,8 @@ array_push($aUsers, $aUser);
 // var_dump($aUsers);
 file_put_contents('../private/users.txt', json_encode($aUsers)  );
 //print_r($aUser);
-header('Location: ../main-page.html');
+$_SESSION['id']     = $aUser[0];
+$_SESSION['email'] = $_POST['email'];
+$_SESSION['password']   = $_POST['password'];
+header('Location: ../main-page.php');
 exit();

@@ -1,5 +1,5 @@
 <?php
-
+session_Start();
 try{
 
   $sTweetId = uniqid();
@@ -51,6 +51,7 @@ try{
   $jTweet->id      = $sTweetId;
   $jTweet->title   = $_POST['tweetTitle'];
   $jTweet->message = $_POST['tweetMessage'];
+  $jTweet->user = $_SESSION['email'];
   // echo json_encode($jTweet);
 
   // open the db
