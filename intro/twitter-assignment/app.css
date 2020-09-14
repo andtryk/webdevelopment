@@ -19,6 +19,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2,1fr);
 }
+/* Frontpage left css begin */
 #frontpage-left-column {
   background: rgb(113, 201, 248);
 }
@@ -72,6 +73,44 @@ article#frontpage-left-column-content .active {
 article#frontpage-left-column-content>a>svg {
   fill: rgba(255, 255, 255, 1);
 }
+/* front page lesft end */
+/* front page right css begin */
+#frontpage-right-column {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+article#login-box {
+  height: 40%;
+  width: 50%;
+  margin-left: 25%;
+}
+article#login-box form{
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-button {
+  width: 20%;
+  height: 3rem;
+  padding: 0.1rem 0px;
+  border: 2px solid;
+  border-color: rgba(29, 161, 242, 1);
+  border-radius: 4rem;
+  color: rgba(29, 161, 242, 1);
+  background: white;
+}
+.login-button:hover {
+  background: rgba(29, 161, 242, 0.3);
+}
+article#signup-box {
+  height: 60%;
+}
+
+
+/* front page right css end */
 
 /* Front page css end */
 
@@ -143,6 +182,30 @@ div#left > div:last-child img {
 /* ############################## */
 div#middle {
   background: rgba(0, 0, 0, 0.5);
+}
+
+div.tweet {
+  background: rgba(255, 255, 255, 1);
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: top;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  padding: 5px;
+}
+div.tweet-content {
+  padding-bottom: 3rem;
+}
+div.tweet-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 5px;
+}
+div.tweet-buttons a {
+  width: 35%;
 }
 
 /* ############################## */

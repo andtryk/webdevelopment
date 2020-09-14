@@ -26,16 +26,20 @@
         </article>
     </section>
     <section id="frontpage-right-column">
+      <article id="login-box">
       <form action="api/api-login.php" method="POST">
         <input name="email" type="text" placeholder="email">
         <input name="password" type="password" placeholder="password">
-        <button>login</button>
+        <button class="login-button">login</button>
       </form>
-      <form action="api/api-signup.php" method="POST">
+      </article>
+      <article id="signup-box">
+      <form class="" action="api/api-signup.php" method="POST">
             <input name="email" type="text" placeholder="email">
             <input name="password" type="password" placeholder="password">
-            <button>signup</button>
+            <button class="login-button">signup</button>
       </form>
+      </article>
     </section>
   </main>
 </body>

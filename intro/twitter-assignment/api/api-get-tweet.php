@@ -13,7 +13,7 @@ if( strlen($_GET['id']) != 13 ){
   exit();
 }
 // connect to the db
-$sTweets = file_get_contents('tweets.txt');
+$sTweets = file_get_contents('../private/tweets.txt');
 $aTweets = json_decode($sTweets);
 
 for( $i = 0; $i < count($aTweets); $i++  ){

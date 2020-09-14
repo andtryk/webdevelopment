@@ -41,23 +41,13 @@
       <button>
         Tweet
       </button>
-      <div>
-        <div>
-          <img src="icon.jpg" alt="">
-        </div>
-        <div>
-          <p><strong>OneDoctype</strong></p>
-          <p>@OneDoctype</p>
-        </div>
-        <svg viewBox="0 0 24 24"><path d="M20.207 8.147c-.39-.39-1.023-.39-1.414 0L12 14.94 5.207 8.147c-.39-.39-1.023-.39-1.414 0-.39.39-.39 1.023 0 1.414l7.5 7.5c.195.196.45.294.707.294s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.022 0-1.413z"></path></svg>
-      </div>
     </div>
     <!-- end left column -->
 
 
     <div id="middle">
     WELCOME <?=  $_SESSION['email']; ?>
-    <form id="formTweet" onsubmit="tweet(); return false">
+    <form id="formTweet" onsubmit="tweet()" method="POST">
     <input type="text" name="tweetTitle" placeholder=" tweet title">
     <input type="text" name="tweetMessage" placeholder=" tweet message">
     <button>tweet</button>

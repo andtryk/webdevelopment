@@ -26,13 +26,10 @@
       $_SESSION['password']   = $aUser[2];
       header('Location: ../main-page.php');
       exit();
-    }else {
-      echo 'Wrong Email or Password';
-      header('Refresh: 2; URL = ../index.php');
-      exit();
     }
   };
 })();
-
+echo 'Wrong Email or Password';
+header('Refresh: 2; URL = ../index.php');
 
 ?>
