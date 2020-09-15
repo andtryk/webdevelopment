@@ -4,6 +4,14 @@ try{
 
   $sTweetId = uniqid();
 
+  if( ! isset($_SESSION['id']) ){
+    http_response_code(400);
+    echo 'You have to bee logged in to make a tweet';
+    header('Refresh: 2; URL = ../index.php');
+    exit();
+  }
+
+
   if( ! isset($_POST['tweetTitle']) ){
     http_response_code(400);
     header('Content-Type: application/json');
