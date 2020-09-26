@@ -12,14 +12,14 @@
 	for(var i = 0; i < aTweets.length; i++){
 	  latestReceivedTweetId = aTweets[i].id
 	  var divTweet = `
-	  <div class="tweet"> 
-	  <form class="tweet" id="updateTweet" method="POST">
+	  <div class="tweet" id="${aTweets[i].id}"> 
+	  <form class="tweet-form" id="updateTweet"  method="POST">
 	  <div class="tweet-content">
 	  <input class="tweet-id" type="hidden" name="tweetId" placeholder="tweet title" value="${aTweets[i].id}">
 	  <input class="tweet-title" type="text" name="newTitle" placeholder="tweet title" value="${aTweets[i].title}">
 	  <input class="tweet-message" type="text" name="newMessage" placeholder="tweet message" value="${aTweets[i].message}">
-	  <button onclick="deleteTweet()">delete</button>
-	  <button onclick="updateTweet(event)">update</button>
+	  <button onclick="deleteTweet(event); return false">delete</button>
+	  <button onclick="updateTweet(event); return false">update</button>
 	  </div>
 	  </form>
 	  </div>
@@ -59,13 +59,13 @@ async function tweet(event) {
 		  latestReceivedTweetId = aTweets[i].id
 		  var divTweet = `
 		  <div class="tweet"> 
-		  <form class="tweet" id="updateTweet" method="POST">
+		  <form class="tweet-form updateTweet" id="updateTweet" method="POST">
 		  <div class="tweet-content">
 		  <input class="tweet-id" type="hidden" name="tweetId" placeholder="tweet title" value="${aTweets[i].id}">
 		  <input class="tweet-title" type="text" name="newTitle" placeholder="tweet title" value="${aTweets[i].title}">
 		  <input class="tweet-message" type="text" name="newMessage" placeholder="tweet message" value="${aTweets[i].message}">
-		  <button onclick="deleteTweet()">delete</button>
-		  <button onclick="updateTweet(event)">update</button>
+		  <button onclick="deleteTweet();return false">delete</button>
+		  <button onclick="updateTweet();return false">update</button>
 		  </div>
 		  </form>
 		  </div>
@@ -76,29 +76,10 @@ async function tweet(event) {
 	  })();
 	  return loadTweet;
 }
-async function updateTweet(event) {
-	event.preventDefault();
-	var data = new FormData(document.querySelector("#updateTweet"));
+async function updateTweet() {
+	var data = new FormData(document.querySelector(".updateTweet"));
 
 	let bridge = await fetch("api/api-update-tweet.php", {
-		method: "POST",
-		body: data,
-	});
-	let sResponse = await bridge.text();
-	let jResponse = JSON.parse(sResponse);
-
-	if (bridge.status != 200) {
-		console.log("error");
-	}
-
-	console.log(jResponse);
-}
-
-async function deleteTweet() {
-	
-	var data = new FormData(document.querySelector("#updateTweet"));
-
-	let bridge = await fetch("api/api-delete-tweet.php", {
 		method: "POST",
 		body: data,
 	});
@@ -125,13 +106,13 @@ async function deleteTweet() {
 		  latestReceivedTweetId = aTweets[i].id
 		  var divTweet = `
 		  <div class="tweet"> 
-		  <form class="tweet" id="updateTweet" method="POST">
+		  <form class="tweet" id="updateTweet ${aTweets[i].id}" method="POST">
 		  <div class="tweet-content">
 		  <input class="tweet-id" type="hidden" name="tweetId" placeholder="tweet title" value="${aTweets[i].id}">
 		  <input class="tweet-title" type="text" name="newTitle" placeholder="tweet title" value="${aTweets[i].title}">
 		  <input class="tweet-message" type="text" name="newMessage" placeholder="tweet message" value="${aTweets[i].message}">
-		  <button onclick="deleteTweet()">delete</button>
-		  <button onclick="updateTweet(event)">update</button>
+		  <button onclick="deleteTweet(event);return false">delete</button>
+		  <button onclick="updateTweet(event);return false">update</button>
 		  </div>
 		  </form>
 		  </div>
@@ -141,4 +122,23 @@ async function deleteTweet() {
 		console.log('latestReceivedTweetId', latestReceivedTweetId)
 	  })();
 	  return loadTweet;
+}
+
+async function deleteTweet(event) {
+	event.preventDefault();
+	var data = new FormData(document.querySelector("#updateTweet"));
+
+	let bridge = await fetch("api/api-delete-tweet.php", {
+		method: "POST",
+		body: data,
+	});
+	let sResponse = await bridge.text();
+	let jResponse = JSON.parse(sResponse);
+
+	if (bridge.status != 200) {
+		console.log("error");
+	}
+
+	console.log(jResponse);
+	jResponse.remove();
 }
