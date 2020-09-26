@@ -2,14 +2,14 @@
  
 try {
  
- if (!isset($_GET['tweetId'])) {
+ if (!isset($_POST['tweetId'])) {
  http_response_code(400);
  header('Content-Type: application/json');
  echo '{"error":"missing id"}';
  exit();
  }
  
- if (strlen($_GET['tweetId']) != 13) {
+ if (strlen($_POST['tweetId']) != 13) {
  http_response_code(400);
  header('Content-Type: application/json');
  echo '{"error":"id is not valid"}';
@@ -53,17 +53,14 @@ try {
     exit();
 }
  
- // connect to the db
  $sTweets = file_get_contents('../private/tweets.txt');
  $aTweets = json_decode($sTweets, true);
  
  for ($i = 0; $i < count($aTweets); $i++) {
-  if ($_GET['tweetId'] == $aTweets[$i]['id']) {
+  if ($_POST['tweetId'] == $aTweets[$i]['id']) {
   $aTweets[$i]['title'] = $_POST['newTitle'];
   $aTweets[$i]['message'] = $_POST['newMessage'];
-  // $aTweets[$i]->title-test = $_POST['newTitle'];
-  echo 'The tweet has been updated';
-  header('Refresh: 2; URL = ../main-page.php');
+  //header('Content-Type: application/json');
   $sTweets = json_encode($aTweets);
   file_put_contents('../private/tweets.txt', $sTweets);
   exit();

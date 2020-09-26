@@ -51,7 +51,7 @@
 
     <div id="middle">
       <h2>Frontpage</h2>
-    <form id="formTweet" onsubmit="tweet()" method="POST">
+    <form id="formTweet" onsubmit="tweet(event);return false">
     <input class="tweet-title" type="text" name="tweetTitle" placeholder=" tweet title">
     <input class="tweet-message" type="text" name="tweetMessage" placeholder=" tweet message">
     <button>tweet</button>
