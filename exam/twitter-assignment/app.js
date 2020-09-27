@@ -68,7 +68,7 @@ async function tweet(event) {
 
 async function updateTweet(event) {
 	event.preventDefault();
-	var data = new FormData(document.querySelector(".updateTweet"));
+	var data = new FormData(document.querySelector("#updateTweet"));
 
 	let bridge = await fetch("api/api-update-tweet.php", {
 		method: "POST",
@@ -80,13 +80,11 @@ async function updateTweet(event) {
 	if (bridge.status != 200) {
 		console.log("error");
 	}
-
 	console.log(jResponse);
 }
 
 async function deleteTweet(event) {
 	event.preventDefault();
-	event.target.parentNode.remove();
 	var data = new FormData(document.querySelector("#updateTweet"));
 
 	let bridge = await fetch("api/api-delete-tweet.php", {
@@ -98,5 +96,5 @@ async function deleteTweet(event) {
 	if (bridge.status != 200) {
 		console.log("error");
 	}
-	
+	event.target.parentNode.parentNode.remove();
 }

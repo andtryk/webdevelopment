@@ -24,7 +24,7 @@ try {
  if (!isset($_POST['newMessage'])) {
     http_response_code(400);
     header('Content-Type: application/json');
-    echo '{"error":"missing title"}';
+    echo '{"error":"missing message"}';
     exit();
 }
  
