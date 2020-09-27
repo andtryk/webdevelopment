@@ -291,19 +291,19 @@ div#middle input{
   align-items: flex-start;
 }
 .tweet-message{
-  height: 250px;
+  height: 150px;
 }
 div#tweets {
   margin-top: 1%;
 }
 
 div.tweet form{
-  height: 20%;
+  height: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-div.tweet input{
+.tweet input{
   box-sizing: border-box;
   padding-top: 1%;
   width: 100%;
@@ -335,15 +335,15 @@ div.tweet-content {
   padding-bottom: 1rem;
   width: 100%;
 }
-form.tweet-buttons {
+div.tweet-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 50%;
+  width: 100%;
   padding-bottom: 5px;
 }
-div.tweet-buttons a {
-  width: 35%;
+div.tweet-buttons button {
+  width: 40%;
 }
 .tweet-form {
   width: 100%;

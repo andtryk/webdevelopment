@@ -18,13 +18,16 @@ if (strlen($_POST['tweetId']) != 13) {
 // connect to the db
 $sTweets = file_get_contents('../private/tweets.txt');
 $aTweets = json_decode($sTweets, true);
- 
+ $aTweetId = $_POST['tweetId'];
+ echo '{ "id":"'.$aTweetId.'"}';
 for ($i = 0; $i < count($aTweets); $i++) {
     if ($_POST['tweetId'] == $aTweets[$i]['id'] && $aTweets[$i]['userId'] == $_SESSION["id"]) {
         array_splice($aTweets, $i, 1);
         header('Content-Type: application/json');
         $sTweets = json_encode($aTweets);
         file_put_contents('../private/tweets.txt', $sTweets);
+        echo json_encode($aTweets);
+        echo '{ "id":"'.$aTweets[$i]['id'].'"}';
         exit();
     }
 }

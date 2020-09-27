@@ -63,6 +63,7 @@ try {
   //header('Content-Type: application/json');
   $sTweets = json_encode($aTweets);
   file_put_contents('../private/tweets.txt', $sTweets);
+  echo '{ "id":"'.$aTweets[$i]['id'].'"}';
   exit();
  }
  }

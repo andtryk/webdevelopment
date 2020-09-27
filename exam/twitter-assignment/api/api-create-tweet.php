@@ -75,7 +75,6 @@ try{
 
   header('Content-Type: application/json');
   echo '{ "id":"'.$sTweetId.'"}';
-  // echo $sTweetId;
 }
 catch(Exception $ex){
   // http_response_code(500);
