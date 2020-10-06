@@ -88,9 +88,9 @@ try{
 
   $query->execute();
   $filename    = $_FILES["profile_picture"]["tmp_name"];
-  $destination = "../images/" . $_FILES["profile_picture"]["name"]; 
+  $destination = "../images/profile-picture/" . $_FILES["profile_picture"]["name"]; 
   move_uploaded_file($filename, $destination); //save uploaded picture in your directory
-  $picture = "images/" . $_FILES["profile_picture"]["name"];
+  $picture = "images/profile-picture/" . $_FILES["profile_picture"]["name"];
 
   session_start();
   $_SESSION['name'] = $_POST['name'];
