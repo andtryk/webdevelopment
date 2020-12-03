@@ -1,0 +1,44 @@
+.subscriptions-wrapper {
+    margin: 30px;
+    margin-bottom: 60px;
+}
+
+.subscription-box {
+    margin-top: 30px;
+    background-color: var(--light-blue);
+    border-radius: var(--rounded-md);
+    box-shadow: var(--box-shadow);
+}
+
+.subscription-box-title {
+    font-weight: 700;
+    padding: 20px;
+    border-bottom: 1.8px solid var(--light-green);
+}
+
+.subscription-box-benefit {
+    padding: 20px;
+    border-bottom: 1.8px solid var(--light-green);
+}
+
+.subscription-box-lower {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscription-box-price {
+    font-weight: 700;
+}
+
+.subscription-box-sub-btn {
+    padding: 10px 20px;
+    color: white;
+    border-radius: var(--rounded-md);
+    background-color: var(--purple);
+}
+
+.unsub-btn {
+    background-color: var(--red);
+}

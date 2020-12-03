@@ -1,5 +1,0 @@
-[
-  [1,"A","AA","a@a.com","pass1"],
-  [2,"B","BB","b@b.com","pass2"],
-  [3,"C","CC","c@c.com","pass3"]
-]

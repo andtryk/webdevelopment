@@ -1,0 +1,30 @@
+#messages h1 {
+    padding: 30px;
+    border-bottom: 1px solid var(--light-green);
+}
+
+.messages-box {
+    border-bottom: 1px solid var(--light-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.messages-box img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.message-box-left {
+    display: flex;
+    align-items: center;
+}
+
+.message-box-left-right a {
+    color: var(--purple);
+    font-weight: 700;
+}

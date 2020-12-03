@@ -1,0 +1,33 @@
+#explore h2 {
+    margin: 1rem;
+    font-size: 1.3rem;
+}
+
+#explore section {
+    margin-bottom: 2rem;
+}
+
+#explore > section:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+#explore > section:first-child > div {
+    padding: 0.3rem 1.5rem;
+    border: solid 1px var(--light-purple);
+    border-radius: 5px;
+    color: var(--purple);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.explore-subpage {
+    display: none;
+}
+
+.explore-active{
+    background: var(--purple);
+    color: white !important;
+    border: none !important;
+}

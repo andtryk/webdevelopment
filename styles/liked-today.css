@@ -1,0 +1,72 @@
+.liked-today-boxes-wrapper {
+    background-color: var(--light-blue);
+    border-radius: var(--rounded-md);
+    margin-top: 30px;
+}
+
+.liked-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--light-green);
+}
+
+.liked-box:last-of-type {
+    border-bottom: 0px;
+}
+
+.liked-box .liked-box-left img {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+    margin-right: 20px;
+}
+
+.liked-box-left {
+    display: flex;
+}
+
+.liked-box-link {
+    color: var(--purple);
+    font-weight: 700;
+    text-decoration: underline;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.liked-box-user i {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.liked-box-time i {
+    color: var(--red);
+    margin-left: 5px;
+}
+
+.liked-box input {
+    height: 20px;
+    width: 20px;
+}
+
+.liked-box input:checked {
+    color: var(--gray-dark);
+    background-color: white;
+}
+
+.liked-today-unlike-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.liked-today-unlike-wrapper button {
+    color: white;
+    background-color: var(--red);
+    padding: 10px 30px;
+    border-radius: var(--rounded-xs);
+    margin-top: 20px;
+    font-size: 16px;
+}

@@ -1,0 +1,74 @@
+header,
+.menu-header {
+    height: 80px;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--light-blue);
+}
+
+header {
+    justify-content: space-between;
+    z-index: 100;
+}
+
+header .menu-overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--menu-overlay);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+header .menu {
+    height: 100%;
+    width: 75%;
+    background-color: white;
+    margin-left: auto;
+}
+
+header .menu-header {
+    justify-content: flex-end;
+}
+
+header button {
+    font-size: 1.2rem;
+}
+
+header nav {
+    padding: 30px;
+}
+
+header nav a {
+    display: block;
+    color: var(--gray-dark);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+header nav i {
+    width: 30px;
+    margin-right: 10px;
+}
+
+header .logo,
+header .back-arrow {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--purple);
+}
+
+header input {
+    width: 100%;
+    margin: 0px 20px;
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray-dark);
+    padding: 7.5px;
+}
+
+header .menu-search {
+    margin-right: 5px;
+}

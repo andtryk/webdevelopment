@@ -1,0 +1,86 @@
+.ig-login-flow-wrapper {
+    background-color: var(--menu-overlay);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    align-items: flex-start;
+}
+
+.ig-login-flow {
+    background-color: white;
+    width: 350px;
+    max-width: 90%;
+    margin-top: 100px;
+    border-radius: 0.5rem;
+    padding: 30px;
+}
+
+.ig-login-flow .close-flow {
+    text-align: right;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.ig-login-flow .close-flow .close-flow-button {
+    font-size: 18px;
+}
+
+.ig-login-flow header {
+    all: unset;
+    width: 100%;
+    font-size: 1.8rem;
+    margin: 20px 0px;
+    display: block;
+}
+
+.ig-login-flow img {
+    height: 40px;
+    width: 40px;
+    margin-left: 20px;
+}
+
+.ig-login-flow p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig-login-flow header span {
+    color: var(--purple);
+    margin-right: 20px;
+}
+
+.ig-login-flow-text {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.ig-login-flow input {
+    display: block;
+    width: 100%;
+    margin: 20px 0px;
+    padding: 15px;
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    border: 0px;
+}
+
+.ig-login-flow form button {
+    width: 100%;
+    background-color: var(--purple);
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.ig-login-flow a {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: underline;
+}

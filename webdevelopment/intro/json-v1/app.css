@@ -1,6 +1,0 @@
-.subpage{
-  display: none;
-}
-.subpage:first-child{
-  display: grid;
-}

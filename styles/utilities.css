@@ -1,0 +1,12 @@
+.hidden {
+    display: none !important;
+}
+
+.appear-transition {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.container {
+    margin: 30px 30px 60px 30px;
+}

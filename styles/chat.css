@@ -1,0 +1,97 @@
+#chat h1 {
+    margin-bottom: 30px;
+}
+
+.chat-box {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 40px;
+    justify-items: center;
+}
+
+.chat-box:last-of-type {
+    margin-bottom: 80px;
+}
+
+.chat-box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    display: block;
+    box-shadow: var(--box-shadow);
+}
+
+.chat-box-mid {
+    grid-row: 1;
+    grid-column: 2/3;
+    background-color: var(--light-blue);
+    padding: 20px;
+    border-radius: var(--rounded-xs);
+    position: relative;
+    width: 100%;
+}
+
+.chat-box-right {
+    grid-column: 3/4;
+    grid-row: 1;
+}
+
+.chat-box-left {
+    grid-column: 1/2;
+    grid-row: 1;
+}
+
+.own-message {
+    background-color: var(--purple);
+    color: white;
+}
+
+.chat-date-message {
+    position: absolute;
+    bottom: -20px;
+    font-size: 12px;
+}
+
+.sent {
+    left: 0px;
+}
+
+.received {
+    right: 0px;
+}
+
+.chat-list form {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    border: 1px solid var(--light-blue);
+    padding: 10px 30px;
+    z-index: 100;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.chat-list input {
+    width: 100%;
+    margin: 0px 20px;
+    border-radius: var(--rounded-xs);
+    border: 1px solid var(--light-green);
+    padding: 5px;
+}
+.chat-list form input::placeholder {
+    color: var(--gray-light);
+}
+
+.chat-list form button i {
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 18px;
+}

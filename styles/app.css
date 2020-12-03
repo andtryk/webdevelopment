@@ -1,0 +1,59 @@
+@import './utilities.css';
+@import './authForm.css';
+@import './menu.css';
+@import './landing-page.css';
+@import './login-page.css';
+@import './hashtag-group-person.css';
+@import './explore.css';
+@import './profile.css';
+@import './instagramModal.css';
+@import './subscriptions.css';
+@import './liked-today.css';
+@import './liked-overview.css';
+@import './privacy-policy.css';
+@import './messages.css';
+@import './chat.css';
+@import './login-page.css';
+
+:root {
+    --light-purple: #c3dafe;
+    --purple: #667eea;
+    --light-blue: rgba(235, 244, 255, 0.7);
+    --light-green: #c3dafe;
+    --green: #2f855a;
+    --red: #f56565;
+    --gray-dark: #555555;
+    --gray-light: #777777;
+    --menu-overlay: rgba(75, 74, 52, 0.7);
+    --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --rounded-xs: 5px;
+    --rounded-sm: 10px;
+    --rounded-md: 15px;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    color: var(--gray-dark);
+    font-family: Open sans;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+button {
+    border: 0px;
+    background: white;
+    cursor: pointer;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}

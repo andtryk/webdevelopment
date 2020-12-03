@@ -1,0 +1,60 @@
+.landing-main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.landing-main h2 {
+    margin: 1rem;
+    font-size: 1.3rem;
+}
+
+.landing-messages div a {
+    background: var(--light-blue);
+    padding: 1.3rem 1rem;
+    border-bottom: solid 1px var(--light-purple);
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.landing-messages div a:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+.landing-messages div a:last-child {
+    border-bottom: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.landing-messages div a p:first-child {
+    font-weight: 700;
+}
+
+.landing-messages div a p:last-child {
+    color: var(--gray-light);
+}
+
+.landing-messages div a img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.landing-btn {
+    text-decoration: none;
+    color: white;
+    background: var(--purple);
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    float: right;
+    margin: 1rem;
+}
+
+.landing-btn i {
+    color: white;
+    font-size: 1.3rem;
+    margin-left: 0.5rem;
+}
